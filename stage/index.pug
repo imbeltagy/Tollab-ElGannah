@@ -16,6 +16,31 @@ html(lang="ar", dir="rtl")
     link(rel="stylesheet", href="assets/css/main.css")
     
   body 
+    section#home.hero 
+      .container
+        .navbar
+          .brand
+            span أكاديمية طلاب الجنة
+            //- .img-container 
+            //-   img(src="assets/images/brand.svg", width="200", height="50", alt="أكاديمية طلاب الجنة")
+          #nav-icon.nav-icon(tabindex="0")
+            span 
+            span 
+            span 
+          #nav-list.nav-list
+            ul
+              li
+                a(href="#home") الرئيسية
+              li
+                a(href="#about") عنا
+              li
+                a(href="#testimonials") آراء العملاء
+              li
+                a(href="#services") خدماتنا
+              li
+                a(href="#contact") تواصل معنا
+
+        main
 
     //- Custom JS File
     script(src="assets/js/app.js") 

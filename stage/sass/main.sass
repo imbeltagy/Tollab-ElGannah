@@ -7,44 +7,62 @@
 // 1. Global Rules
 // 2. Hero Section
 // 3. Nav Bar
+// 4. Main
 
 
 // ===============
 // 1. Global Rules
 // ===============
+
+
 body
   background: $bg-light
-  color: $c-ordinary
+  color: $c-dark
   font-family: $f-ordinary
+
+::selection
+  background: rgba(darken($c-accent, 25%), 40%)
 
 // ===============
 // 2. Hero Section
 // ===============
 .hero
+  --divider-height: 8rem
+  padding-bottom: var(--divider-height)
   position: relative
-  display: grid
-  gap: $s-3
-  grid-template-rows: auto 1fr
-  min-height: 80svh
   background-attachment: fixed
   background-size: cover
-  background-position: center bottom
+  background-position: center 60%
   background-repeat: no-repeat
-  background-image: url("../images/hero/hero-bg-sm.jpg"), url("../images/hero/hero-bg-xs.jpg")
-  @include md-screens
-    background-image: url("../images/hero/hero-bg-md.jpg"), url("../images/hero/hero-bg-xs.jpg")
-  @include lg-screens
-    background-image: url("../images/hero/hero-bg-lg.jpg"), url("../images/hero/hero-bg-xs.jpg")
+  background-image: url("../images/hero/hero-bg.jpg")
+  min-height: 85svh
 
   &::before
     content: ""
     position: absolute
     inset: 0
     background: linear-gradient(to top, #0009, #0001)
-
+    backdrop-filter: blur(3px)
+    
   .container
     position: relative
     z-index: 5
+
+  .shape-divider
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    transform: rotate(180deg)
+
+    svg
+      position: relative
+      display: block
+      width: 100%
+      height: var(--divider-height)
+
+    .shape-fill
+      fill: $bg-light
 
 // ==========
 // 3. Nav Bar
@@ -57,12 +75,13 @@ body
   gap: $s-5
   font-size: 1.2rem
   padding: $s-3 0
-  // border-bottom: .1rem solid $c-contrast
+  // border-bottom: .1rem solid $c-light
 
   .brand
     font-family: $f-special
     color: $c-accent
     font-size: 1.3em
+    flex-basis: 8rem
 
   .nav-icon
     position: relative
@@ -81,7 +100,7 @@ body
       left: 0
       width: 100%
       height: .2rem
-      background-color: $c-contrast
+      background-color: $c-light
       border-radius: .1rem
       transition: background-color $fast-trans, inset $fast-trans, transform $fast-trans
       &:first-child
@@ -123,7 +142,7 @@ body
 
     ul
       overflow: hidden
-      background: #0005
+      background: #000c
       @include md-screens
         background: unset
         overflow: visible
@@ -134,8 +153,8 @@ body
       font-size: 1.1rem
       cursor: pointer
       position: relative
-      color: $c-contrast
-      &:hover
+      color: $c-light
+      &:hover 
         color: $c-accent
       &::before
         content: ""
@@ -144,7 +163,7 @@ body
         inset-inline-end: 0
         width: 100%
         height: .1rem
-        background-color: $c-contrast
+        background-color: $c-light
         transition: width $fast-trans, background-color $fast-trans
       @include md-screens
         &:not(#lang-switcher)::before
@@ -174,3 +193,40 @@ body
         padding-inline: $s-5 $s-5
         @include md-screens
           padding: 0
+
+// =======
+// 4. Main
+// =======
+main
+  color: $c-light
+  text-align: center
+  margin-top: $s-5
+  @include md-screens
+    font-size: 1.2rem
+
+  .content
+    max-width: 30rem
+    margin-inline: auto
+
+  h1
+    font-size: 2.3em
+    margin: 0
+    white-space: balance
+    font-family: $f-special
+
+  hr
+    width: 3em
+    margin: $s-2 auto $s-3
+    border-color: $c-accent
+
+  p
+    margin: 0
+    font-size: 1.5em
+    white-space: balance
+
+  .btn
+    margin: $s-5 auto 0
+    border-radius: 10em
+    font-size: 1.3em
+    padding: .5em 1.7em
+    background-color: darken($c-accent, 20%)

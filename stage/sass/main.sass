@@ -27,7 +27,6 @@ body
 // 2. Hero Section
 // ===============
 .hero
-  --divider-height: 8rem
   padding-bottom: var(--divider-height)
   position: relative
   background-attachment: fixed
@@ -36,6 +35,10 @@ body
   background-repeat: no-repeat
   background-image: url("../images/hero/hero-bg.jpg")
   min-height: 85svh
+
+  --divider-height: 4rem
+  @include md-screens
+    --divider-height: 6rem
 
   &::before
     content: ""

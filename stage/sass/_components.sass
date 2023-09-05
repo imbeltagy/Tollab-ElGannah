@@ -4,13 +4,18 @@
   margin-inline: auto
   &:not(.no-spaces)
     padding: $s-5 0
+  @include md-screens
+    width: 48rem
+  @include lg-screens
+    width: 73rem
   &.fluid
     max-width: 100rem
-  &:not(.fluid)
+  &.small
     @include md-screens
-      width: 48rem
+      width: 35rem
     @include lg-screens
-      width: 73rem
+      width: 60rem
+
 
 // Images Containers
 .img-container
@@ -29,14 +34,14 @@
   display: block
   width: fit-content
   margin-inline: auto
-  margin-top: $s-3
-  padding: $s-2 $s-3
+  padding: .5em 1.7em
   color: #fff
-  font-size: 1.6em
+  font-size: 1.3em
+  font-weight: 900
   text-decoration: none
   border: none
   outline: none
-  border-radius: .2em
+  border-radius: 10em
   cursor: pointer
   background-color: $c-accent
   box-shadow: 0 0 1em $c-accent
@@ -45,11 +50,11 @@
     margin-inline-start: 0
   &:hover,
   &:focus
-    background-color: darken($c-accent, 30%)
+    background-color: darken($c-accent, 10%)
     box-shadow: 0 0 0 3px rgba($c-accent, 0.5)
   &:active
-    background-color: darken($c-accent, 40%)
+    background-color: darken($c-accent, 30%)
     box-shadow: 0 0 0 $c-accent
   &:disabled
-    background-color: darken($c-accent, 30%)
+    background-color: darken($c-accent, 20%)
     box-shadow: none

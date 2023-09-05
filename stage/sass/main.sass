@@ -8,17 +8,16 @@
 // 2. Hero Section
 // 3. Nav Bar
 // 4. Main
-
+// 5. About
 
 // ===============
 // 1. Global Rules
 // ===============
-
-
 body
   background: $bg-light
   color: $c-dark
   font-family: $f-ordinary
+  // height: 3000px // temp
 
 ::selection
   background: rgba(darken($c-accent, 25%), 40%)
@@ -208,11 +207,12 @@ main
     font-size: 1.2rem
 
   .content
-    max-width: 30rem
+    max-width: 40rem
     margin-inline: auto
 
   h1
     font-size: 2.3em
+    font-weight: 900
     margin: 0
     white-space: balance
     font-family: $f-special
@@ -229,7 +229,48 @@ main
 
   .btn
     margin: $s-5 auto 0
-    border-radius: 10em
-    font-size: 1.3em
-    padding: .5em 1.7em
-    background-color: darken($c-accent, 20%)
+
+// ========
+// 5. About
+// ========
+// .about .container
+//   @include md-screens
+//     display: flex
+//     flex-direction: row-reverse
+//     align-items: flex-end
+//     gap: $s-1
+
+//   .picture
+//     background-color: #b9b9b9
+//     overflow: hidden
+//     border-radius: 56% 44% 32% 68% / 50% 46% 54% 50%
+//     max-width: 60vw
+//     margin-inline: auto
+//     @include md-screens
+//       border-radius: unset
+//       width: 50%
+//       flex-shrink: 0
+
+//   .text
+//     margin-top: $s-5
+//     text-align: center
+//     white-space: balance
+//     @include md-screens
+//       text-align: end
+
+//     h4
+//       font-size: 1.4rem
+//       font-family: $f-special
+
+//     h2
+//       font-family: $f-special
+//       font-weight: 900
+//       margin: $s-1 0
+
+//     h2, h4
+//       position: relative
+//       margin-left: -$s-5*2
+
+//     p
+//       line-height: 2
+  

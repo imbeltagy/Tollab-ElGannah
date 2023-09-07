@@ -35,9 +35,15 @@ body
   background-image: url("../images/hero/hero-bg.jpg")
   min-height: 85svh
 
-  --divider-height: 4rem
+  --divider-height: 2rem
+  --divider-width: 167%
+  @include sm-screens
+    --divider-height: 3rem
   @include md-screens
     --divider-height: 6rem
+  @include lg-screens
+    --divider-height: 6rem
+    --divider-width: 100%
 
   &::before
     content: ""
@@ -54,8 +60,9 @@ body
     position: absolute
     bottom: 0
     left: 0
-    width: 100%
+    width: var(--divider-width)
     transform: rotate(180deg)
+    overflow: hidden
 
     svg
       position: relative
@@ -233,44 +240,82 @@ main
 // ========
 // 5. About
 // ========
-// .about .container
-//   @include md-screens
-//     display: flex
-//     flex-direction: row-reverse
-//     align-items: flex-end
-//     gap: $s-1
+.about .container .card
+  background-color: #eee
+  overflow: hidden
+  border-radius: 1rem
 
-//   .picture
-//     background-color: #b9b9b9
-//     overflow: hidden
-//     border-radius: 56% 44% 32% 68% / 50% 46% 54% 50%
-//     max-width: 60vw
-//     margin-inline: auto
-//     @include md-screens
-//       border-radius: unset
-//       width: 50%
-//       flex-shrink: 0
+  .md, .lg
+    display: none
+  @include md-screens
+    display: flex
+    flex-direction: row-reverse
+    align-items: stretch
+    gap: $s-1
+    .sm
+      display: none
+    .md
+      display: block
+  @include lg-screens
+    .md
+      display: none
+    .lg
+      display: block
 
-//   .text
-//     margin-top: $s-5
-//     text-align: center
-//     white-space: balance
-//     @include md-screens
-//       text-align: end
+  .picture
+    width: 100%
+    margin-inline: auto
+    @include md-screens
+      width: 26%
+      flex-shrink: 0
+    @include lg-screens
+      width: 20%
+    .img-container
+      height: 100%
+    img
+      height: 100%
+      ovject-fit: cover
 
-//     h4
-//       font-size: 1.4rem
-//       font-family: $f-special
+  .content
+    margin-top: $s-3
+    padding: $s-4
+    padding-bottom: $s-3
+    text-align: center
+    white-space: balance
+    @include md-screens
+      text-align: start
+      margin-top: 0
 
-//     h2
-//       font-family: $f-special
-//       font-weight: 900
-//       margin: $s-1 0
+    h4
+      color: $c-secondary
+      font-size: 1.4rem
+      font-family: $f-special
 
-//     h2, h4
-//       position: relative
-//       margin-left: -$s-5*2
+    h2
+      color: $c-primary
+      font-family: $f-special
+      font-weight: 900
+      margin: -$s-1 0 $s-1
 
-//     p
-//       line-height: 2
+    h2, h4
+      position: relative
+
+    p
+      line-height: 2
+
+    .social
+      font-size: 1.7rem
+      display: flex
+      justify-content: center
+      gap: $s-3
+      margin-top: $s-1
+      @include md-screens
+        justify-content: flex-start
+
+      i
+        color: rgba($c-dark, 80%)
+        cursor: pointer
+        &:hover
+          color: $c-accent
+          
   

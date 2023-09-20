@@ -128,7 +128,27 @@ html(lang="ar", dir="rtl")
         p
           | قال ﷺ: « 
           span الماهِرُ بالقرآن مع السَّفَرة الكرام البَرَرة
-          |  »
+          |  
+            
+    //- Testimonials Section
+    section#testimonials.testimonials 
+      .container 
+        .section-headding 
+          h2 آراء طلابنا
+          img(src="assets/images/headding-bg.svg", alt="-")
+        .slider
+          .cards-container 
+            .card 
+              img(src="assets/images/testimonials/temp.webp", alt="-")
+            .card 
+              img(src="assets/images/testimonials/temp.webp", alt="-")
+            .card 
+              img(src="assets/images/testimonials/temp.webp", alt="-")
+
+          .slider-controls
+            button.prev.disabled(aria-label="Previous")
+            button.next(aria-label="Next")
+
 
     //- Custom JS File
     script(src="assets/js/app.js") 

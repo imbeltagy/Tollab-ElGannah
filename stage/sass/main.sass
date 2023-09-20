@@ -404,3 +404,74 @@ main
     span
       font-family: $f-special
       font-weight: bold
+
+// ===============
+// 8. Testimonials
+// ===============
+.testimonials
+  .slider
+    position: relative
+    margin-inline: auto
+    @include sm-screens
+      width: 24rem
+    @include md-screens
+      width: 100%
+
+    .cards-container
+      gap: $s-4
+      position: relative 
+      overflow: hidden
+      margin-inline: auto
+      width: calc(100% - 7rem)
+      --images-count: 1
+      @include md-screens
+        --images-count: 2
+      @include lg-screens
+        --images-count: 3
+        width: 100%
+
+    .card
+      --space: 0
+      position: absolute
+      right: var(--space)
+      top: 0
+      transition: inset $fast-trans
+      overflow: hidden
+      border: .5rem solid $c-secondary
+      border-radius: 1.2rem
+      img
+        width: 100%
+    
+    .slider-controls
+      position: absolute
+      transform: translateY(-50%)
+      top: 50%
+      left: 0
+      width: 100%
+      display: flex
+      justify-content: space-between
+      @include lg-screens
+        display: none
+
+      button
+        display: block
+        height: 2.5rem
+        aspect-ratio: 1 / 1
+        border: solid $c-secondary
+        border-width: .5rem 0 0 .5rem
+        border-radius: .3rem
+        cursor: pointer
+        user-select: none
+        background: unset
+        transition: border-color $fast-trans
+        &:hover
+          border-color: rgba($c-secondary, 70%)
+        &.disabled
+          pointer-events: none
+          border-color: rgba($c-secondary, 30%)
+        &:not(:focus) 
+          outline: none
+        &.prev
+          transform: rotate(135deg)
+        &.next
+          transform: rotate(-45deg)

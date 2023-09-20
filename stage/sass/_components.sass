@@ -2,7 +2,9 @@
 .container
   width: calc( 100% - $s-3 * 2 )
   margin-inline: auto
-  &:not(.no-spaces)
+  &.sm-spaces
+    padding: $s-4 0
+  &:not(.sm-spaces)
     padding: $s-5*2 0
   @include md-screens
     width: 48rem
@@ -15,7 +17,6 @@
       width: 35rem
     @include lg-screens
       width: 60rem
-
 
 // Images Containers
 .img-container

@@ -4,10 +4,6 @@
   src: url('../fonts/Cairo-Regular.ttf'), url('../fonts/Cairo-Medium.ttf'), url('assets/fonts/Cairo-Bold.ttf')
   font-display: swap
 @font-face 
-  font-family: 'Readex Pro'
-  src: url('../fonts/ReadexPro-Bold.ttf')
-  font-display: swap
-@font-face 
   font-family: 'Kufam'
   src: url('../fonts/Kufam-VariableFont_wght.ttf')
   font-display: swap
@@ -25,7 +21,7 @@ $f-special: 'Kufam', cursive
 $c-accent: #f49e36
 $c-primary: darken($c-accent, 20%)
 $c-dark: #26282B
-$c-secondary: rgba($c-dark, 80%)
+$c-secondary: #4E5052
 $c-light: #fff
 $bg-light: #fafafa
 // Sizes
@@ -40,7 +36,7 @@ $md-trans: .5s
 
 // Breakpoints Mixins
 @mixin sm-screens()
-  @media (min-width: 20rem)
+  @media (min-width: 30rem)
     @content
 @mixin md-screens()
   @media (min-width: 50rem)

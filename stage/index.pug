@@ -21,8 +21,7 @@ html(lang="ar", dir="rtl")
       .container
         .navbar
           .brand
-            .img-container 
-              img(src="assets/images/brand.svg", width="128", height="68", alt="أكاديمية طلاب الجنة")
+            img(src="assets/images/brand.svg", width="128", height="68", alt="أكاديمية طلاب الجنة")
           #nav-icon.nav-icon(tabindex="0")
             span 
             span 
@@ -128,7 +127,7 @@ html(lang="ar", dir="rtl")
         p
           | قال ﷺ: « 
           span الماهِرُ بالقرآن مع السَّفَرة الكرام البَرَرة
-          |  
+          |  »
             
     //- Testimonials Section
     section#testimonials.testimonials 
@@ -156,7 +155,25 @@ html(lang="ar", dir="rtl")
           h2 لا تنسى التسجيل عسى ان ينفع الله بنا
           p قال ﷺ: “أهل القرآن هم أهل الله وخاصته” 
         a.btn(href="#") تواصل معنا
-
+        
+    //- Footer
+    footer 
+      .container 
+        .row 
+          .brand
+            img(src="assets/images/brand.svg", width="128", height="68", alt="أكاديمية طلاب الجنة")
+          .social 
+            a(href="#")
+              i.fa-brands.fa-whatsapp
+              | طلاب الجنة
+            a(href="#")
+              i.fa-brands.fa-facebook
+              | طلاب الجنة
+        .pagination 
+          a(href="#home") الرئيسية
+          a(href="#about") نبذة عنا
+          a(href="#services") خدماتنا
+          a(href="#testimonials") آراء طلابنا
 
     //- Custom JS File
     script(src="assets/js/app.js") 

@@ -507,3 +507,74 @@ main
 
   .btn
     border-radius: .5rem
+
+// ==========
+// 11. Footer
+// ==========
+footer
+  background: $c-dark
+
+  .container
+    display: grid
+    text-align: center
+    gap: $s-3
+
+    @include md-screens
+      grid-template-columns: auto 1fr
+      gap: $s-5
+      align-items: center
+
+    .row
+      width: min(100%, 12rem)
+      margin: 0 auto
+      @include sm-screens
+        width: 25rem
+      @include md-screens
+        width: 20rem
+
+    .brand
+      width: 100%
+      img
+        width: 100%
+        height: auto
+
+    .social
+      @include sm-screens
+        display: flex
+        gap: $s-3
+        justify-content: center
+      @include md-screens
+        justify-content: space-between
+        padding-inline: 1rem
+      a
+        display: flex
+        gap: $s-2
+        align-items: center
+        justify-content: center
+
+    a
+      display: block
+      font-size: 1.2rem
+      color: $c-light
+      &:hover
+        color: $c-accent
+
+    .pagination
+      @include sm-screens
+        display: grid
+        grid-template-columns: repeat(2, auto)
+        justify-content: center
+        column-gap: $s-5
+      @include md-screens
+        grid-template-columns: repeat(4, auto)
+        column-gap: $s-5
+        a:not(:last-child)
+          position: relative
+          &::after
+            content: ""
+            background: $c-light
+            width: 1px
+            height: 100%
+            position: absolute
+            top: 0
+            left: - $s-4

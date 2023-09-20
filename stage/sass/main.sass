@@ -26,28 +26,49 @@ body
 ::selection
   background: rgba(darken($c-accent, 25%), 40%)
 
-// ===============
-// 2. Hero Section
-// ===============
-.hero
-  padding-bottom: var(--divider-height)
+:has(> .shape-divider)
   position: relative
-  background-attachment: fixed
-  background-size: cover
-  background-position: center 60%
-  background-repeat: no-repeat
-  background-image: url("../images/hero/hero-bg.jpg"), url("../images/hero/hero-bg-px.jpg")
-  min-height: 85svh
-
   --divider-height: 2rem
   --divider-width: 167%
   @include sm-screens
-    --divider-height: 3rem
+    --divider-height: 4rem
   @include md-screens
     --divider-height: 6rem
   @include lg-screens
     --divider-height: 6rem
     --divider-width: 100%
+
+.shape-divider
+  position: absolute
+  left: 0
+  width: var(--divider-width)
+  overflow: hidden
+
+  &.bottom
+    bottom: 0
+    transform: rotate(180deg)
+  &.top
+    top: 0
+
+  svg
+    position: relative
+    display: block
+    width: 100%
+    height: var(--divider-height)
+
+  .shape-fill
+    fill: $bg-light
+
+// ===============
+// 2. Hero Section
+// ===============
+.hero
+  padding-bottom: var(--divider-height)
+  background-attachment: fixed
+  background-size: cover
+  background-position: center 60%
+  background-image: url("../images/hero/hero-bg.jpg"), url("../images/hero/hero-bg-px.jpg")
+  min-height: 85svh
 
   &::before
     content: ""
@@ -59,23 +80,6 @@ body
   .container
     position: relative
     z-index: 5
-
-  .shape-divider
-    position: absolute
-    bottom: 0
-    left: 0
-    width: var(--divider-width)
-    transform: rotate(180deg)
-    overflow: hidden
-
-    svg
-      position: relative
-      display: block
-      width: 100%
-      height: var(--divider-height)
-
-    .shape-fill
-      fill: $bg-light
 
 // ==========
 // 3. Nav Bar
@@ -361,3 +365,42 @@ main
       p
         margin-inline: auto
         max-width: 20rem
+                  
+// ===========
+// 7. Reminder
+// ===========
+.reminder
+  background-size: cover
+  background-position: center 30%
+  background-image: url("../images/reminder/masjed-xsm.jpg"), url("../images/reminder/masjed-px.jpg")
+  @include sm-screens
+  background-image: url("../images/reminder/masjed-sm.jpg"), url("../images/reminder/masjed-px.jpg")
+  @include md-screens
+  background-image: url("../images/reminder/masjed-md.jpg"), url("../images/reminder/masjed-px.jpg")
+  @include lg-screens
+  background-image: url("../images/reminder/masjed-lg.jpg"), url("../images/reminder/masjed-px.jpg")
+  @media (min-width: 1440px)
+  background-image: url("../images/reminder/masjed-xlg.jpg"), url("../images/reminder/masjed-px.jpg")
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    background-color: #251A0C77
+
+  .container
+    position: relative
+
+  p
+    padding: $s-5 0
+    text-align: center
+    color: $c-light
+    font-size: 2.5rem
+    white-space: balance
+
+    @include lg-screens
+      padding: $s-5 *1.5 0
+      
+    span
+      font-family: $f-special
+      font-weight: bold

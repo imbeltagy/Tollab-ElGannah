@@ -366,10 +366,11 @@ main
         margin-inline: auto
         max-width: 20rem
                   
-// ===========
-// 7. Reminder
-// ===========
-.reminder
+// ==============================
+// 7. Reminder & Last-Reminder BG
+// ==============================
+.reminder, .last-reminder
+  position: relative
   background-size: cover
   background-position: center 30%
   background-image: url("../images/reminder/masjed-xsm.jpg"), url("../images/reminder/masjed-px.jpg")
@@ -390,11 +391,15 @@ main
 
   .container
     position: relative
+    color: $c-light
 
+// ===========
+// 8. Reminder
+// ===========
+.reminder
   p
     padding: $s-5 0
     text-align: center
-    color: $c-light
     font-size: 2.5rem
     white-space: balance
 
@@ -406,7 +411,7 @@ main
       font-weight: bold
 
 // ===============
-// 8. Testimonials
+// 9. Testimonials
 // ===============
 .testimonials
   .slider
@@ -475,3 +480,30 @@ main
           transform: rotate(135deg)
         &.next
           transform: rotate(-45deg)
+
+// =================
+// 10. Last-Reminder
+// =================
+.last-reminder .container
+  display: grid
+  justify-content: center
+  text-align: center
+  gap: $s-4
+  @include md-screens
+    grid-template-columns: 1fr auto
+    align-items: center
+    text-align: start
+
+  .text
+    @include sm-screens
+      font-size: 1.1rem
+    @include md-screens
+      font-size: 1.4rem
+    @include lg-screens
+      font-size: 2rem
+
+    h2
+      font-family: $f-special
+
+  .btn
+    border-radius: .5rem

@@ -90,11 +90,12 @@ body
   inset-inline: 0
   transition: background $fast-trans
   z-index: 1000
+  box-shadow: 0px -2.5px 31.1px rgba(0, 0, 0, 0.02), 0px -4px 48.3px rgba(0, 0, 0, 0.028), 0px -3.4px 62px rgba(0, 0, 0, 0.035), 0px 1.6px 76.5px rgba(0, 0, 0, 0.042), 0px 18px 96.7px rgba(0, 0, 0, 0.05), 0px 88px 138px rgba(0, 0, 0, 0.07)
   
   &.fixed
     position: fixed
     top: 0
-    background: #0007
+    background: #0009
 
   .container
     padding: $s-3 0
@@ -173,7 +174,7 @@ body
 
     ul
       overflow: hidden
-      background: #000c
+      background: #0009
       @include md-screens
         background: unset
         overflow: visible
@@ -233,6 +234,9 @@ main
   text-align: center
   @include md-screens
     font-size: 1.2rem
+
+  .container
+    padding-top: 14.2rem !important
 
   .content
     max-width: 40rem
@@ -608,6 +612,8 @@ footer
       @include sm-screens
         width: 25rem
       @include md-screens
+        width: 12rem
+      @include lg-screens
         width: 20rem
 
     .brand
@@ -622,6 +628,10 @@ footer
         gap: $s-3
         justify-content: center
       @include md-screens
+        display: block
+        justify-content: space-between
+      @include lg-screens
+        display: flex
         justify-content: space-between
         padding-inline: 1rem
       a
@@ -643,16 +653,21 @@ footer
         grid-template-columns: repeat(2, auto)
         justify-content: center
         column-gap: $s-5
+        :last-child
+          grid-column: span 2
       @include md-screens
-        grid-template-columns: repeat(4, auto)
-        column-gap: $s-5
+        grid-template-columns: repeat(5, auto)
+        column-gap: $s-4
         a:not(:last-child)
           position: relative
           &::after
             content: ""
             background: $c-light
             width: 1px
-            height: 100%
+            height: 80%
             position: absolute
-            top: 0
-            left: - $s-4
+            left: - $s-4 / 2
+            top: 50%
+            transform: translateY(-50%)
+        :last-child
+          grid-column: span 1

@@ -9,10 +9,10 @@ const navbar = document.querySelector(".navbar"),
   main = document.querySelector("main .container"),
   navTop = navbar.offsetTop;
 
-window.onload = () => {
-  let height = navbar.clientHeight + parseFloat(getComputedStyle(navbar).getPropertyValue("top")) * 2;
-  main.style.paddingTop = height + "px";
-};
+// window.onload = () => {
+//   let height = navbar.clientHeight + parseFloat(getComputedStyle(navbar).getPropertyValue("top")) * 2;
+//   main.style.paddingTop = height + "px";
+// };
 
 window.onscroll = () => {
   window.scrollY >= navTop ? navbar.classList.add("fixed") : navbar.classList.remove("fixed");

@@ -24,6 +24,9 @@ body
   color: $c-dark
   font-family: $f-ordinary
 
+section
+  scroll-margin-top: 3.5rem
+
 ::selection
   background: rgba(darken($c-accent, 25%), 40%)
 
@@ -265,95 +268,95 @@ main
 // ========
 // 5. About
 // ========
-.about .container .card
-  background-color: #eee
-  overflow: hidden
-  border-radius: 1rem
+.about .container
+  padding-bottom:  0
+  .card
+    background-color: #eee
+    overflow: hidden
+    border-radius: 1rem
 
-  .sm, .md, .lg
-    display: none
-  @include sm-screens
-    .xsm
+    .sm, .md, .lg
       display: none
-    .sm
-      display: block
-  @include md-screens
-    display: flex
-    flex-direction: row-reverse
-    align-items: stretch
-    gap: $s-1
-    .sm
-      display: none
-    .md
-      display: block
-  @include lg-screens
-    .md
-      display: none
-    .lg
-      display: block
-
-  .picture
-    width: 100%
-    margin-inline: auto
+    @include sm-screens
+      .xsm
+        display: none
+      .sm
+        display: block
     @include md-screens
-      width: 30%
-      flex-shrink: 0
-    @include lg-screens
-      width: 25%
-    .img-container
-      height: 100%
-    img
-      height: 100%
-      object-fit: cover
-
-  .content
-    margin-top: $s-3
-    padding: $s-4
-    padding-bottom: $s-3
-    text-align: center
-    white-space: balance
-    @include md-screens
-      text-align: start
-      margin-top: 0
-
-    h4
-      color: $c-secondary
-      font-size: 1.4rem
-      font-family: $f-special
-
-    h2
-      color: $c-primary
-      font-family: $f-special
-      font-weight: 900
-      margin: -$s-1 0 $s-1
-
-    h2, h4
-      position: relative
-
-    p
-      line-height: 2
-
-    .social
-      font-size: 1.7rem
       display: flex
-      justify-content: center
-      gap: $s-3
-      margin-top: $s-1
-      @include md-screens
-        justify-content: flex-start
+      flex-direction: row-reverse
+      align-items: stretch
+      gap: $s-1
+      .sm
+        display: none
+      .md
+        display: block
+    @include lg-screens
+      .md
+        display: none
+      .lg
+        display: block
 
-      i
-        color: rgba($c-dark, 80%)
-        cursor: pointer
-        &:hover
-          color: $c-accent
+    .picture
+      width: 100%
+      margin-inline: auto
+      @include md-screens
+        width: 30%
+        flex-shrink: 0
+      @include lg-screens
+        width: 25%
+      .img-container
+        height: 100%
+      img
+        height: 100%
+        object-fit: cover
+
+    .content
+      margin-top: $s-3
+      padding: $s-4
+      padding-bottom: $s-3
+      text-align: center
+      white-space: balance
+      @include md-screens
+        text-align: start
+        margin-top: 0
+
+      h4
+        color: $c-secondary
+        font-size: 1.4rem
+        font-family: $f-special
+
+      h2
+        color: $c-primary
+        font-family: $f-special
+        font-weight: 900
+        margin: -$s-1 0 $s-1
+
+      h2, h4
+        position: relative
+
+      p
+        line-height: 2
+
+      .social
+        font-size: 1.7rem
+        display: flex
+        justify-content: center
+        gap: $s-3
+        margin-top: $s-1
+        @include md-screens
+          justify-content: flex-start
+
+        i
+          color: rgba($c-dark, 80%)
+          cursor: pointer
+          &:hover
+            color: $c-accent
           
 // ===========
 // 6. Services
 // ===========
 .services .container
-  padding-top: 0
-
   .cards
     display: grid
     gap: $s-5
@@ -666,7 +669,7 @@ footer
             width: 1px
             height: 80%
             position: absolute
-            left: - $s-4 / 2
+            left: calc(-1 * $s-4/2)
             top: 50%
             transform: translateY(-50%)
         :last-child

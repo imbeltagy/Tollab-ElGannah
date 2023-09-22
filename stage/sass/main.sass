@@ -491,8 +491,75 @@ main
         &.next
           transform: rotate(-45deg)
 
+// =======
+// 10. FQA
+// =======
+.FQA
+  $__c-accent: darken($c-accent, 15%)
+  .box
+    border: 1px solid $c-secondary
+    border-radius: 1rem
+
+    .row:not(:last-child)
+      border-bottom: 1px solid $c-secondary
+
+    .q
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: $s-3
+      font-size: 1.4rem
+      font-weight: 700
+      cursor: pointer
+      transition: color $fast-trans
+
+      .arrow
+        display: block
+        height: 1.2rem
+        aspect-ratio: 1 / 1
+        border: solid $c-secondary
+        border-width: .4rem .4rem 0 0
+        border-radius: .3rem
+        cursor: pointer
+        user-select: none
+        background: unset
+        transform:  rotate(45deg)
+        transition: border-color $fast-trans, transform $fast-trans
+
+    .row.opened, .row:hover
+      .q 
+        color: $__c-accent
+      .arrow
+        border-color: $__c-accent
+
+    .row.opened .arrow
+      transform: rotate(135deg)
+
+    .a
+      padding: 0 $s-3
+      display: grid
+      grid-template-rows: 0fr
+      overflow: hidden
+      transition: grid-template-rows $md-trans
+      div
+        min-height: 0
+    .row.opened .a
+      grid-template-rows: 1fr
+
+    .a p
+      position: relative
+      padding: $s-3 0
+      font-size: 1.2rem
+      &::before
+        content: ""
+        position: absolute
+        inset-inline: 0
+        top: 0
+        height: 1px
+        background-color: $__c-accent
+
 // =================
-// 10. Last-Reminder
+// 11. Last-Reminder
 // =================
 .last-reminder .container
   display: grid
@@ -519,7 +586,7 @@ main
     border-radius: .5rem
 
 // ==========
-// 11. Footer
+// 12. Footer
 // ==========
 footer
   background: $c-dark

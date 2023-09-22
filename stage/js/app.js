@@ -18,6 +18,12 @@ window.onscroll = () => {
   window.scrollY >= navTop ? navbar.classList.add("fixed") : navbar.classList.remove("fixed");
 };
 
+// FQA Open Function
+[...document.querySelectorAll("#FQA .row .q")].forEach((q) => {
+  console.log(q.parentElement);
+  q.onclick = () => q.parentElement.classList.toggle("opened");
+});
+
 // Apply Slider Components
 class Slider {
   constructor(slider) {

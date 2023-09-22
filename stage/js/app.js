@@ -4,6 +4,20 @@ document.getElementById("nav-icon").onclick = function () {
   document.getElementById("nav-list").classList.toggle("opened");
 };
 
+// Fixed NavBar
+const navbar = document.querySelector(".navbar"),
+  main = document.querySelector("main .container"),
+  navTop = navbar.offsetTop;
+
+window.onload = () => {
+  let height = navbar.clientHeight + parseFloat(getComputedStyle(navbar).getPropertyValue("top")) * 2;
+  main.style.paddingTop = height + "px";
+};
+
+window.onscroll = () => {
+  window.scrollY >= navTop ? navbar.classList.add("fixed") : navbar.classList.remove("fixed");
+};
+
 // Apply Slider Components
 class Slider {
   constructor(slider) {

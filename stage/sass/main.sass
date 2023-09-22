@@ -85,14 +85,24 @@ body
 // 3. Nav Bar
 // ==========
 .navbar
-  position: relative
-  display: flex
-  align-items: center
-  justify-content: space-between
-  gap: $s-5
-  font-size: 1.2rem
-  padding: $s-3 0
-  // border-bottom: .1rem solid $c-light
+  position: absolute
+  top: $s-4 * 2
+  inset-inline: 0
+  transition: background $fast-trans
+  z-index: 1000
+  
+  &.fixed
+    position: fixed
+    top: 0
+    background: #0007
+
+  .container
+    padding: $s-3 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: $s-5
+    font-size: 1.2rem
 
   .brand
     font-family: $f-special
@@ -221,7 +231,6 @@ body
 main
   color: $c-light
   text-align: center
-  margin-top: $s-5
   @include md-screens
     font-size: 1.2rem
 

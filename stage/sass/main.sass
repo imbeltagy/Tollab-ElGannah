@@ -447,9 +447,9 @@ main
       position: relative 
       overflow: hidden
       margin-inline: auto
-      width: calc(100% - 7rem)
       --images-count: 1
       @include md-screens
+        width: calc(100% - 7rem)
         --images-count: 2
       @include lg-screens
         --images-count: 3
@@ -467,14 +467,16 @@ main
         width: 100%
     
     .slider-controls
-      position: absolute
-      transform: translateY(-50%)
-      top: 50%
-      left: 0
+      padding: $s-4
       width: 100%
       display: flex
       justify-content: space-between
-
+      @include md-screens
+        padding-inline: 0
+        position: absolute
+        transform: translateY(-50%)
+        top: 50%
+        left: 0
       button
         display: block
         height: 2.5rem

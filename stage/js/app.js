@@ -20,7 +20,6 @@ window.onscroll = () => {
 
 // FQA Open Function
 [...document.querySelectorAll("#FQA .row .q")].forEach((q) => {
-  console.log(q.parentElement);
   q.onclick = () => q.parentElement.classList.toggle("opened");
 });
 

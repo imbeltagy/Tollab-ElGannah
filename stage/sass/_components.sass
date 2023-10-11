@@ -62,20 +62,38 @@
 
 // Sections Headding
 .section-headding 
-  font-size: 2.5rem
-  max-width: 18ch
-  text-align: center
-  margin-inline: auto
-  margin-bottom: $s-5 *1.5
-  position: relative
+  margin-bottom: $s-5
+  
+  .title
+    max-width: 18ch
+    position: relative
+    font-size: 2.5rem
+    text-align: center
+    margin-inline: auto
+    position: relative
 
-  h2
-    font-size: 1em
-    color: $c-secondary
-    font-family: $f-special
-  img
-    position: absolute
-    inset-inline: 0
-    top: 50%
-    transform: translateY(-50%)
-    z-index: -1
+    h2
+      font-size: 1em
+      color: $c-secondary
+      font-family: $f-special
+    .bg
+      position: absolute
+      inset-inline: 0
+      top: 50%
+      transform: translateY(-50%)
+      z-index: -1
+  
+  .brief
+    max-width: 65ch
+    margin-inline: auto
+
+    p
+      text-align: center
+      padding: .5rem 0 .3rem
+      color: $c-secondary
+
+    .underline
+      display: block
+      width: 80%
+      margin-inline: auto
+      max-width: 40ch
